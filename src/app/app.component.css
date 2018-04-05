@@ -1,37 +1,26 @@
-* {
-    box-sizing:border-box;
+.wrapper {
+    display: grid;
+    grid-template-columns: 150px auto auto;
+    grid-template-rows: auto 300px 300px;
+    grid-gap: 5px;
+    background-color: #fff;
+    color: #444;
 }
-html, body {
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    position:fixed;
-    margin:0;
-    padding:0;
+
+.box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
 }
-.table {
-    display:table;
-    width:100%;
-    height:100%;
-    table-layout:fixed;
-    color: white;
+.satLabel{
+    
 }
-.row {
-    display:table-row;
-    height: 300px;
-}
-.cell {
-    display:table-cell;
-    border:1px solid grey;
-    text-align: center;
-}
-.header {
-    display:table-header-group;
-    border:1px solid grey;
+.clearBox {
     background-color: white;
-    color: black;
-    text-align: center;
-    font-size: x-large;
+    color: white;
+    padding: 20px;
 }
 .sat1{
 

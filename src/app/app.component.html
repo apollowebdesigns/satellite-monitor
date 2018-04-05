@@ -4,22 +4,26 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<div class='table'>
-  <div class='header'>Satellite Status Monitor</div>
-  <div class='row'>
-    <div class="cell sat1" [ngClass]="'statusUP'">
-      Satellite 1
-    </div>
-    <div class="cell sat2" [ngClass]="'statusUP'">
-      Satellite 2
-    </div>
+<div class="wrapper">
+  <div class="clearBox"></div>
+  <div class="box satLabel">Polar</div>
+  <div class="box satLabel">Geo</div>
+  <div class="box hallLabel">IT Hall 1</div>
+  <div class="box sat1" [ngClass]="'statusUP'">
+    {{satInfo[0].name}}
+    <p>Receiving State: {{satInfo[0].status}}</p>
   </div>
-  <div class='row'>
-    <div class="cell sat3" [ngClass]="'statusUP'">
-      Satellite 3
-    </div>
-    <div class="cell sat4" [ngClass]="'statusUP'">
-      Satellite 4
-    </div>
+  <div class="box sat2" [ngClass]="'statusUP'">
+    {{satInfo[1].name}}
+    <p>Receiving State: {{satInfo[1].status}}</p>
+  </div>
+  <div class="box hallLabel">IT Hall 2</div>
+  <div class="box sat3" [ngClass]="'statusUP'">
+    {{satInfo[2].name}}
+    <p>Receiving State: {{satInfo[2].status}}</p>
+  </div>
+  <div class="box sat4" [ngClass]="'statusUP'">
+    {{satInfo[3].name}}
+    <p>Receiving State: {{satInfo[3].status}}</p>
   </div>
 </div>
