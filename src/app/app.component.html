@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title }}
   </h1>
 </div>
 <div class="wrapper">
@@ -9,21 +9,45 @@
   <div class="box satLabel">Polar</div>
   <div class="box satLabel">Geo</div>
   <div class="box hallLabel">IT Hall 1</div>
-  <div class="box sat1" [ngClass]="'statusUP'">
+  <div class="box sat1" [ngClass]="'statusUP'" (click)="onSelect(0)">
     {{satInfo[0].name}}
-    <p>Receiving State: {{satInfo[0].status}}</p>
+    <div *ngIf="!satBox[0]">
+      <p>Receiving State: {{satInfo[0].status}}</p>
   </div>
-  <div class="box sat2" [ngClass]="'statusUP'">
+    <div *ngIf="satBox[0]">
+      <p>Receiving Detail: {{satInfo[0].details}}</p>
+      <p>Last Signal: {{satInfo[0].lastConnect}}</p>
+    </div>
+  </div>
+  <div class="box sat2" [ngClass]="'statusUP'" (click)="onSelect(1)">
     {{satInfo[1].name}}
-    <p>Receiving State: {{satInfo[1].status}}</p>
+    <div *ngIf="!satBox[1]">
+      <p>Receiving State: {{satInfo[1].status}}</p>
+    </div>
+    <div *ngIf="satBox[1]">
+      <p>Receiving Detail: {{satInfo[1].details}}</p>
+      <p>Receiving Detail: {{satInfo[1].lastConnect}}</p>
+    </div>
   </div>
   <div class="box hallLabel">IT Hall 2</div>
-  <div class="box sat3" [ngClass]="'statusUP'">
+  <div class="box sat3" [ngClass]="'statusUP'" (click)="onSelect(2)">
     {{satInfo[2].name}}
-    <p>Receiving State: {{satInfo[2].status}}</p>
+    <div *ngIf="!satBox[2]">
+      <p>Receiving State: {{satInfo[2].status}}</p>
+    </div>
+    <div *ngIf="satBox[2]">
+      <p>Receiving Detail: {{satInfo[2].details}}</p>
+      <p>Receiving Detail: {{satInfo[2].lastConnect}}</p>
+    </div>
   </div>
-  <div class="box sat4" [ngClass]="'statusUP'">
+  <div class="box sat4" [ngClass]="'statusUP'" (click)="onSelect(3)">
     {{satInfo[3].name}}
-    <p>Receiving State: {{satInfo[3].status}}</p>
+    <div *ngIf="!satBox[3]">
+      <p>Receiving State: {{satInfo[3].status}}</p>
+    </div>
+    <div *ngIf="satBox[3]">
+      <p>Receiving Detail: {{satInfo[3].details}}</p>
+      <p>Receiving Detail: {{satInfo[3].lastConnect}}</p>
+    </div>
   </div>
 </div>

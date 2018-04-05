@@ -22,6 +22,23 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome Satellite Monitor!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Satellite Monitor');
   }));
+  it(`should have as satBox array`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.satBox[0]).toEqual(false);
+    expect(app.satBox[1]).toEqual(false);
+    expect(app.satBox[2]).toEqual(false);
+    expect(app.satBox[3]).toEqual(false);
+  }));
+
+  it('Should change state on click', async(() =>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onSelect(0);
+    expect(app.satBox[0]).toEqual(true);
+    app.onSelect(0);
+    expect(app.satBox[0]).toEqual(false);
+  }))
 });
