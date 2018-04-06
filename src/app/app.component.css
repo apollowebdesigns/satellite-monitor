@@ -1,17 +1,20 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 .wrapper {
     display: grid;
     grid-template-columns: 150px 500px 500px;
     grid-template-rows: auto 300px 300px;
-    grid-gap: 5px;
+    grid-gap: 1px;
     background-color: #fff;
     color: #444;
 }
 
 .box {
-    background-color: #444;
+    background: linear-gradient(#444, #ccc);
     color: #fff;
     border-radius: 5px;
-    padding: 20px;
+    padding: 5px;
     font-size: 150%;
 }
 .satLabel{
@@ -35,8 +38,8 @@
 
 }
 .statusUP{
-    background-color: green;
+    background: linear-gradient(darkgreen,green);
 }
 .statusDOWN{
-    background-color: red;
+    background: linear-gradient(darkred,red);
 }

@@ -41,6 +41,9 @@ export class AppComponent implements  OnInit {
         let sat = this.satInfo.find(x => x.id == item.id);
         //console.log(sat);
         sat.status = item.state;
+        if (sat.status === 'OK') {
+          sat.lastConnect = new Date().toISOString();
+        }
         //this.satInfo[item.id].status = item.state;
         //console.log(this.satInfo);
       });
