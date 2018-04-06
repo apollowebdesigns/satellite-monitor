@@ -1,8 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}
-  </h1>
+<div class="topBanner">
+  <img class="logo" src="./assets/metOfficeLogo.png" alt="Welcome to Met Office Satellite Monitor">
+  <span class="title">{{ title }}</span>
 </div>
 <div class="wrapper">
   <div class="clearBox"></div>
@@ -26,7 +25,7 @@
     </div>
     <div *ngIf="satBox[1]">
       <p>Receiving Detail: {{satInfo[1].details}}</p>
-      <p>Receiving Detail: {{satInfo[1].lastConnect}}</p>
+      <p>Last Signal: {{satInfo[1].lastConnect}}</p>
     </div>
   </div>
   <div class="box hallLabel"><p>IT Hall 2</p></div>
@@ -37,7 +36,7 @@
     </div>
     <div *ngIf="satBox[2]">
       <p>Receiving Detail: {{satInfo[2].details}}</p>
-      <p>Receiving Detail: {{satInfo[2].lastConnect}}</p>
+      <p>Last Signal: {{satInfo[2].lastConnect}}</p>
     </div>
   </div>
   <div class="box sat4" [ngClass]="{'statusUP':satInfo[3].status=='OK', 'statusDOWN':satInfo[3].status=='ERROR'}" (click)="onSelect(3)">
@@ -47,7 +46,7 @@
     </div>
     <div *ngIf="satBox[3]">
       <p>Receiving Detail: {{satInfo[3].details}}</p>
-      <p>Receiving Detail: {{satInfo[3].lastConnect}}</p>
+      <p>Last Signal: {{satInfo[3].lastConnect}}</p>
     </div>
   </div>
 </div>
