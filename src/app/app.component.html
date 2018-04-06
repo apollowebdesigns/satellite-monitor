@@ -6,9 +6,9 @@
 </div>
 <div class="wrapper">
   <div class="clearBox"></div>
-  <div class="box satLabel">Polar</div>
-  <div class="box satLabel">Geo</div>
-  <div class="box hallLabel">IT Hall 1</div>
+  <div class="box satLabel"><span>Polar</span></div>
+  <div class="box satLabel"><span>Geo</span></div>
+  <div class="box hallLabel"><p>IT Hall 1</p></div>
   <div class="box sat1" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">
     {{satInfo[0].name}}
     <div *ngIf="!satBox[0]">
@@ -29,7 +29,7 @@
       <p>Receiving Detail: {{satInfo[1].lastConnect}}</p>
     </div>
   </div>
-  <div class="box hallLabel">IT Hall 2</div>
+  <div class="box hallLabel"><p>IT Hall 2</p></div>
   <div class="box sat3" [ngClass]="{'statusUP':satInfo[2].status=='OK', 'statusDOWN':satInfo[2].status=='ERROR'}" (click)="onSelect(2)">
     {{satInfo[2].name}}
     <div *ngIf="!satBox[2]">
