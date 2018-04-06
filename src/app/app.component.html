@@ -9,7 +9,7 @@
   <div class="box satLabel">Polar</div>
   <div class="box satLabel">Geo</div>
   <div class="box hallLabel">IT Hall 1</div>
-  <div class="box sat1" [ngClass]="'statusUP'" (click)="onSelect(0)">
+  <div class="box sat1" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">
     {{satInfo[0].name}}
     <div *ngIf="!satBox[0]">
       <p>Receiving State: {{satInfo[0].status}}</p>
@@ -19,7 +19,7 @@
       <p>Last Signal: {{satInfo[0].lastConnect}}</p>
     </div>
   </div>
-  <div class="box sat2" [ngClass]="'statusUP'" (click)="onSelect(1)">
+  <div class="box sat2" [ngClass]="{'statusUP':satInfo[1].status=='OK', 'statusDOWN':satInfo[1].status=='ERROR'}" (click)="onSelect(1)">
     {{satInfo[1].name}}
     <div *ngIf="!satBox[1]">
       <p>Receiving State: {{satInfo[1].status}}</p>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="box hallLabel">IT Hall 2</div>
-  <div class="box sat3" [ngClass]="'statusUP'" (click)="onSelect(2)">
+  <div class="box sat3" [ngClass]="{'statusUP':satInfo[2].status=='OK', 'statusDOWN':satInfo[2].status=='ERROR'}" (click)="onSelect(2)">
     {{satInfo[2].name}}
     <div *ngIf="!satBox[2]">
       <p>Receiving State: {{satInfo[2].status}}</p>
@@ -40,7 +40,7 @@
       <p>Receiving Detail: {{satInfo[2].lastConnect}}</p>
     </div>
   </div>
-  <div class="box sat4" [ngClass]="'statusUP'" (click)="onSelect(3)">
+  <div class="box sat4" [ngClass]="{'statusUP':satInfo[3].status=='OK', 'statusDOWN':satInfo[3].status=='ERROR'}" (click)="onSelect(3)">
     {{satInfo[3].name}}
     <div *ngIf="!satBox[3]">
       <p>Receiving State: {{satInfo[3].status}}</p>
