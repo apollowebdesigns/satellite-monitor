@@ -1,7 +1,8 @@
 import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import { SATINFO} from './satellite-info';
-import {Satellite} from "./satellite";
 import set = Reflect.set;
+
+const EventSource: any = window['EventSource'];
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent implements  OnInit {
   constructor (private changeDetector: ChangeDetectorRef) {}
 
   private EVENT_URL = 'http://localhost:8080/stream';
-  private message: Array = [];
+  private message: Array<any> = [];
+  private ws;
 
   title = 'Satellite Monitor';
   satInfo = SATINFO;
@@ -26,7 +28,7 @@ export class AppComponent implements  OnInit {
   }
 
   ngOnInit() {
-    // creates event object
+    //let eventSource = window['EventSource'];
     this.ws = new EventSource(this.EVENT_URL, { withCredentials: true });
 
     // listing to server messages
