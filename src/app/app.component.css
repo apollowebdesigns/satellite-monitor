@@ -1,0 +1,61 @@
+
+.wrapper {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 100px 500px 500px;
+    grid-template-rows: 90px 300px 300px;
+    grid-gap: 1px;
+    color: #444;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.box {
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 150%;
+    text-align: center;
+}
+.satLabel{
+    background-color: #444444;
+    padding: 0!important;
+}
+.satLabel span {
+    display: inline-block;
+    line-height: 90px;
+    vertical-align: middle;
+}
+.hallLabel{
+    padding: 0!important;
+    background-color: #444444;
+}
+.hallLabel p{
+    transform: rotate(270deg);
+    margin-top: 125px;
+    padding:0;
+}
+
+.clearBox {
+    background-color: #333;
+    color: white;
+}
+.sat1{
+
+}
+.sat2{
+
+}
+.sat3{
+
+}
+.sat4{
+
+}
+.statusUP{
+    background: linear-gradient(darkgreen,green);
+}
+.statusDOWN{
+    background: linear-gradient(darkred,red);
+}

@@ -1,3 +1,5 @@
+# Not Production Ready Code! For proof of concept and demo only
+
 # SatelliteMonitor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
@@ -14,6 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+Run `ng build --base-href <path to files> ` if you wish to run within a sub directory
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
