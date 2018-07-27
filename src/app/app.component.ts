@@ -29,7 +29,8 @@ export class AppComponent implements  OnInit {
 
   ngOnInit() {
     //let eventSource = window['EventSource'];
-    this.ws = new EventSource(this.EVENT_URL, { withCredentials: true });
+    // this.ws = new EventSource(this.EVENT_URL, { withCredentials: true });
+    this.ws = new WebSocket('ws://127.0.0.1:5678/');
 
     // listing to server messages
     this.ws.onmessage = (evt) => {
