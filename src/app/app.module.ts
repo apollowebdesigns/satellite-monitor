@@ -4,13 +4,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
-// import { BoostrapModalComponent } from './boostrap-modal/boostrap-modal.component';
+import { BoostrapModalComponent } from './boostrap-modal/boostrap-modal.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
-    // BoostrapModalComponent
+    AppComponent,
+    BoostrapModalComponent
   ],
   imports: [
     BrowserModule,

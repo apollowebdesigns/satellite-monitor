@@ -9,10 +9,11 @@
   <div class="box satLabel"><span>Geo</span></div>
   <div class="box hallLabel"><p>IT Hall 1</p></div>
   <div class="box sat1" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">
+    <app-boostrap-modal></app-boostrap-modal>    
     {{satInfo[0].name}}
     <div *ngIf="!satBox[0]">
       <p>Receiving State: {{satInfo[0].status}}</p>
-  </div>
+    </div>
     <div *ngIf="satBox[0]">
       <p>Receiving Detail: {{satInfo[0].details}}</p>
       <p>Last Signal: {{satInfo[0].lastConnect}}</p>
