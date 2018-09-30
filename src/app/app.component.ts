@@ -20,6 +20,10 @@ export class AppComponent implements  OnInit {
   title = 'Satellite Monitor';
   satInfo = SATINFO;
   closeResult: string;
+  pin1 = 0;
+  pin2 = 0;
+  pin3 = 0;
+  pin4 = 0;
 
   satBox = [
    false,false,false,false
@@ -27,6 +31,16 @@ export class AppComponent implements  OnInit {
 
   onSelect(satId): void {
     this.satBox[satId] = !this.satBox[satId];
+  }
+
+  submitPin1(number): void {
+    console.log('what is the number?');
+    console.log(number);
+    this.pin1 = number;
+    if (parseInt(number) === 1234) {
+      this.satInfo[0].status = 'OK';
+    }
+    console.log(this.satInfo);
   }
 
   open(content) {

@@ -20,16 +20,13 @@
         <div class="form-group">
           <label for="dateOfBirth">PIN Number:</label>
           <div class="input-group">
-            <input id="pin1" class="form-control" placeholder="." name="pin1">
-            <input id="pin2" class="form-control" placeholder="." name="pin2">
-            <input id="pin3" class="form-control" placeholder="." name="pin3">
-            <input id="pin3" class="form-control" placeholder="." name="pin4">
+            <input ng-model="pin1" id="pin1" class="form-control" placeholder="." name="pin1" type="password" #pin1>
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-outline-dark" (click)="submitPin1(pin1.value)">Save</button>
     </div>
   </ng-template>
   
