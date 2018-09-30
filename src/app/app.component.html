@@ -8,8 +8,32 @@
   <div class="box satLabel"><span>Polar</span></div>
   <div class="box satLabel"><span>Geo</span></div>
   <div class="box hallLabel"><p>IT Hall 1</p></div>
-  <div class="box sat1" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">
-    <app-boostrap-modal></app-boostrap-modal>    
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Enter PIN</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">PIN Number:</label>
+          <div class="input-group">
+            <input id="pin1" class="form-control" placeholder="." name="pin1">
+            <input id="pin2" class="form-control" placeholder="." name="pin2">
+            <input id="pin3" class="form-control" placeholder="." name="pin3">
+            <input id="pin3" class="form-control" placeholder="." name="pin4">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  
+  <div class="box sat1" (click)="open(content)" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">  
     {{satInfo[0].name}}
     <div *ngIf="!satBox[0]">
       <p>Receiving State: {{satInfo[0].status}}</p>

@@ -9,6 +9,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class BoostrapModalComponent implements OnInit {
   closeResult: string;
+  correctpin: ['ERROR', 'ERROR', 'ERROR', 'ERROR'];
 
   constructor(private modalService: NgbModal) {}
 
