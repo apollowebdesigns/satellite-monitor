@@ -8,9 +8,9 @@
   <div class="box satLabel"><span>Polar</span></div>
   <div class="box satLabel"><span>Geo</span></div>
   <div class="box hallLabel"><p>IT Hall 1</p></div>
-  <ng-template #content1 let-modal>
+  <ng-template #content1 let-modal class="content">
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Enter PIN</h4>
+      <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 1</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -20,13 +20,13 @@
         <div class="form-group">
           <label for="dateOfBirth">PIN Number:</label>
           <div class="input-group">
-            <input ng-model="pin1" id="pin1" class="form-control" placeholder="." name="pin1" type="password" #pin1>
+            <input ng-model="pin1" id="pin1" class="form-control" placeholder="enter pin XXXX" name="pin1" type="password" #pin1>
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin1.value, 1)">Save</button>
+      <button type="button" class="btn btn-outline-light" (click)="submitPin(pin1.value, 1)">Save</button>
     </div>
   </ng-template>
   
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <ng-template #content2 let-modal>
+  <ng-template #content2 let-modal class="content">
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 2</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -53,13 +53,13 @@
         <div class="form-group">
           <label for="dateOfBirth">PIN Number:</label>
           <div class="input-group">
-            <input ng-model="pin2" id="pin2" class="form-control" placeholder="." name="pin2" type="password" #pin2>
+            <input ng-model="pin2" id="pin2" class="form-control" placeholder="enter pin XXXX" name="pin2" type="password" #pin2>
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin2.value, 2)">Save</button>
+      <button type="button" class="btn btn-outline-light" (click)="submitPin(pin2.value, 2)">Save</button>
     </div>
   </ng-template>
 
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <ng-template #content3 let-modal>
+  <ng-template #content3 let-modal class="content">
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 3</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -86,13 +86,13 @@
         <div class="form-group">
           <label for="dateOfBirth">PIN Number:</label>
           <div class="input-group">
-            <input ng-model="pin3" id="pin3" class="form-control" placeholder="." name="pin3" type="password" #pin3>
+            <input ng-model="pin3" id="pin3" class="form-control" placeholder="enter pin XXXX" name="pin3" type="password" #pin3>
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin3.value, 3)">Save</button>
+      <button type="button" class="btn btn-outline-light" (click)="submitPin(pin3.value, 3)">Save</button>
     </div>
   </ng-template>
 
@@ -108,7 +108,7 @@
     </div>
   </div>
 
-  <ng-template #content4 let-modal>
+  <ng-template #content4 let-modal class="content">
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 4</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -120,13 +120,13 @@
         <div class="form-group">
           <label for="dateOfBirth">PIN Number:</label>
           <div class="input-group">
-            <input ng-model="pin4" id="pin4" class="form-control" placeholder="." name="pin4" type="password" #pin4>
+            <input ng-model="pin4" id="pin4" class="form-control" placeholder="enter pin XXXX" name="pin4" type="password" #pin4>
           </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin4.value, 4)">Save</button>
+      <button type="button" class="btn btn-outline-light" (click)="submitPin(pin4.value, 4)">Save</button>
     </div>
   </ng-template>
 

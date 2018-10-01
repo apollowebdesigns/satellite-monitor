@@ -1,3 +1,5 @@
+$bootstrap-border-override: 1px solid black;
+
 .wrapper {
     position: fixed;
     display: grid;
@@ -61,9 +63,21 @@
 
 .modal-header {
     background-color: #444 !important;
+    border: $bootstrap-border-override;
 }
 
 .modal-body {
     background-color: #333;
+    border: $bootstrap-border-override;
+}
+
+.content {
+    background-color: #333 !important;
+    border: $bootstrap-border-override;
+}
+
+.modal-footer {
+    background-color: #444 !important;
+    border: $bootstrap-border-override;
 }
     
