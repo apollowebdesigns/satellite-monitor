@@ -1,6 +1,7 @@
-import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { SATINFO} from './satellite-info';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { SATINFO } from './satellite-info';
+import { CORRECT_PIN } from './constants/constants';
 import set = Reflect.set;
 
 const EventSource: any = window['EventSource'];
@@ -10,8 +11,8 @@ const EventSource: any = window['EventSource'];
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements  OnInit {
-  constructor (private changeDetector: ChangeDetectorRef, private modalService: NgbModal) {}
+export class AppComponent implements OnInit {
+  constructor(private changeDetector: ChangeDetectorRef, private modalService: NgbModal) { }
 
   private EVENT_URL = 'http://localhost:8080/stream';
   private message: Array<any> = [];
@@ -20,31 +21,26 @@ export class AppComponent implements  OnInit {
   title = 'Satellite Monitor';
   satInfo = SATINFO;
   closeResult: string;
-  pin1 = 0;
-  pin2 = 0;
-  pin3 = 0;
-  pin4 = 0;
+
+  private correctPin = CORRECT_PIN;
 
   satBox = [
-   false,false,false,false
+    false, false, false, false
   ];
 
   onSelect(satId): void {
     this.satBox[satId] = !this.satBox[satId];
   }
 
-  submitPin1(number): void {
-    console.log('what is the number?');
-    console.log(number);
-    this.pin1 = number;
-    if (parseInt(number) === 1234) {
-      this.satInfo[0].status = 'OK';
+  submitPin(pin, satellite): void {
+    const index = satellite - 1;
+    if (Number(pin) === this.correctPin[index]) {
+      this.satInfo[index].status = 'OK';
     }
-    console.log(this.satInfo);
   }
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -57,12 +53,11 @@ export class AppComponent implements  OnInit {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 
   ngOnInit() {
-    //let eventSource = window['EventSource'];
     this.ws = new EventSource(this.EVENT_URL, { withCredentials: true });
 
     // listing to server messages
@@ -75,21 +70,21 @@ export class AppComponent implements  OnInit {
         this.message = Array.from(JSON.parse(evt.data));
         this.message.forEach(item => {
           console.log(item);
-          let sat = this.satInfo.find(x => x.id == item.id);
+          const sat = this.satInfo.find(x => x.id === item.id);
           sat.status = item.state;
           if (sat.status === 'OK') {
             sat.lastConnect = new Date().toISOString();
           }
         });
       }
-      this.message = ["No Data"];
+      this.message = ['No Data'];
       // manually detect changes
       this.changeDetector.detectChanges();
     };
 
   }
 
-  logServerMessage (data) {
-    console.log("message from server :",data);
+  logServerMessage(data) {
+    console.log('message from server :', data);
   }
 }

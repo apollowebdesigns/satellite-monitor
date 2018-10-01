@@ -8,7 +8,7 @@
   <div class="box satLabel"><span>Polar</span></div>
   <div class="box satLabel"><span>Geo</span></div>
   <div class="box hallLabel"><p>IT Hall 1</p></div>
-  <ng-template #content let-modal>
+  <ng-template #content1 let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Enter PIN</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -26,11 +26,11 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submitPin1(pin1.value)">Save</button>
+      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin1.value, 1)">Save</button>
     </div>
   </ng-template>
   
-  <div class="box sat1" (click)="open(content)" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">  
+  <div class="box sat1" (click)="open(content1)" [ngClass]="{'statusUP':satInfo[0].status=='OK', 'statusDOWN':satInfo[0].status=='ERROR'}" (click)="onSelect(0)">  
     {{satInfo[0].name}}
     <div *ngIf="!satBox[0]">
       <p>Receiving State: {{satInfo[0].status}}</p>
@@ -40,7 +40,30 @@
       <p>Last Signal: {{satInfo[0].lastConnect}}</p>
     </div>
   </div>
-  <div class="box sat2" [ngClass]="{'statusUP':satInfo[1].status=='OK', 'statusDOWN':satInfo[1].status=='ERROR'}" (click)="onSelect(1)">
+
+  <ng-template #content2 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 2</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">PIN Number:</label>
+          <div class="input-group">
+            <input ng-model="pin2" id="pin2" class="form-control" placeholder="." name="pin2" type="password" #pin2>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin2.value, 2)">Save</button>
+    </div>
+  </ng-template>
+
+  <div class="box sat2" (click)="open(content2)" [ngClass]="{'statusUP':satInfo[1].status=='OK', 'statusDOWN':satInfo[1].status=='ERROR'}" (click)="onSelect(1)">
     {{satInfo[1].name}}
     <div *ngIf="!satBox[1]">
       <p>Receiving State: {{satInfo[1].status}}</p>
@@ -50,8 +73,31 @@
       <p>Last Signal: {{satInfo[1].lastConnect}}</p>
     </div>
   </div>
+
+  <ng-template #content3 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 3</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">PIN Number:</label>
+          <div class="input-group">
+            <input ng-model="pin3" id="pin3" class="form-control" placeholder="." name="pin3" type="password" #pin3>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin3.value, 3)">Save</button>
+    </div>
+  </ng-template>
+
   <div class="box hallLabel"><p>IT Hall 2</p></div>
-  <div class="box sat3" [ngClass]="{'statusUP':satInfo[2].status=='OK', 'statusDOWN':satInfo[2].status=='ERROR'}" (click)="onSelect(2)">
+  <div class="box sat3" (click)="open(content3)" [ngClass]="{'statusUP':satInfo[2].status=='OK', 'statusDOWN':satInfo[2].status=='ERROR'}" (click)="onSelect(2)">
     {{satInfo[2].name}}
     <div *ngIf="!satBox[2]">
       <p>Receiving State: {{satInfo[2].status}}</p>
@@ -61,7 +107,30 @@
       <p>Last Signal: {{satInfo[2].lastConnect}}</p>
     </div>
   </div>
-  <div class="box sat4" [ngClass]="{'statusUP':satInfo[3].status=='OK', 'statusDOWN':satInfo[3].status=='ERROR'}" (click)="onSelect(3)">
+
+  <ng-template #content4 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Enter PIN Satellite 4</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">PIN Number:</label>
+          <div class="input-group">
+            <input ng-model="pin4" id="pin4" class="form-control" placeholder="." name="pin4" type="password" #pin4>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="submitPin(pin4.value, 4)">Save</button>
+    </div>
+  </ng-template>
+
+  <div class="box sat4" (click)="open(content4)" [ngClass]="{'statusUP':satInfo[3].status=='OK', 'statusDOWN':satInfo[3].status=='ERROR'}" (click)="onSelect(3)">
     {{satInfo[3].name}}
     <div *ngIf="!satBox[3]">
       <p>Receiving State: {{satInfo[3].status}}</p>
@@ -71,7 +140,4 @@
       <p>Last Signal: {{satInfo[3].lastConnect}}</p>
     </div>
   </div>
-  <!-- <div class="modal">
-    <app-boostrap-modal></app-boostrap-modal>
-  </div> -->
 </div>
